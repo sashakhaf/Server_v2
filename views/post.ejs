@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<a href="/" class="btn btn-info">Accueil</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 offset-md-2 jumbotron">
+	        <h2><%= post.title %></h2>
+	        <p class="lead"><%= post.body %></p>
+        </div>
+    </div>
+    <div class="row">
+		<div class="col-md-8 offset-md-2 jumbotron">
+			<h4>Commentaires</h4>
+	      	<table class="table">
+	      		<tbody>
+	      			<% comments.forEach(function(comment) { %>
+					<tr>
+				        <td><b><%= comment.name %> </b> - <a href="mailto:<%= comment.email %>"><%= comment.email %></a> <br> <%= comment.body %></td>
+	      			</tr>
+				    <% }); %>
+	      		</tbody>
+	      	</table>
+	    </div>
+    </div>
+</div>
+</body>
+</html>
